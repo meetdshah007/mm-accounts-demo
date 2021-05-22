@@ -1,0 +1,30 @@
+.dashboard-card {
+  &--users-card {
+    border-top-color: #e74c3c;
+    border-top: 5px solid #e74c3c;
+  }
+  &--in-progress-card {
+    border-top: 5px solid;
+    border-color: #f1c40f;
+  }
+  &--numbers {
+    font-size: 22px;
+  }
+  &--icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    height: 70px;
+    width: 70px;
+    ion-icon {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+.position-relative {
+  position: relative;
+  height: 50px;
+}
