@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Login </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-text class="text-center">
+      <ion-button color="primary" shape="round" (click)="login()"
+        >Login here</ion-button
+      >
+    </ion-text>
+  </ion-item>
+
+  <ion-list lines="none">
+    <ion-item>
+      <ion-text
+        class="text-center"
+        color="primary"
+        expand="block"
+        (click)="goToRegister()"
+        >Sign up here</ion-text
+      >
+    </ion-item>
+  </ion-list>
+</ion-content>

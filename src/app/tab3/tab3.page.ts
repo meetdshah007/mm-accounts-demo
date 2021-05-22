@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -8,9 +9,9 @@ import { Component } from '@angular/core';
 export class Tab3Page {
   date = new Date();
 
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
 
   onLogout() {
-    // todo: logic to logout and redirection to login page.
+    this.navCtrl.navigateRoot('');
   }
 }

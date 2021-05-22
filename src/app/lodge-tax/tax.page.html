@@ -1,0 +1,167 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="next()">{{nextBtnText}}</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button *ngIf="activeSlide" (click)="back()"
+        >{{prevBtnText}}</ion-button
+      >
+    </ion-buttons>
+    <ion-title> Lodge Tax </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lodge Tax</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-progress-bar [value]="progress"></ion-progress-bar>
+
+  <form [formGroup]="taxForm">
+    <ion-slides
+      pager="false"
+      [options]="slideOpts"
+      (ionSlideDidChange)="moveTo()"
+    >
+      <ion-slide>
+        <ion-list>
+          <ion-header>Provide your Basic Details</ion-header>
+          <ion-item>
+            <ion-label position="floating"> Tax file Number </ion-label>
+            <ion-input formControlName="taxFileNo" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"> Name </ion-label>
+            <ion-input formControlName="name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"> DOB </ion-label>
+            <ion-datetime
+              formControlName="dob"
+              display-timezone="utc"
+            ></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Address</ion-label>
+            <ion-textarea formControlName="address"></ion-textarea>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Postal Address</ion-label>
+            <ion-input formControlName="postal" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              Were you an Australian resident for tax purposes from 1 July 2019
+              to 30 June 2020?
+            </ion-label>
+            <ion-checkbox formControlName="australianResident"></ion-checkbox>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              Will you need to lodge an tax return in future years?
+            </ion-label>
+            <ion-checkbox formControlName="willYouLodgeTax"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+      <ion-slide>
+        <ion-list>
+          <ion-header>Provide your Income Details</ion-header>
+          <div formArrayName="incomeStatement">
+            <ion-card
+              *ngFor="let control of incomeStatement.controls; let i=index"
+            >
+              <ng-container [formGroup]="control">
+                <ion-item>
+                  <ion-label position="floating"> Company Name </ion-label>
+                  <ion-input
+                    formControlName="companyName"
+                    type="text"
+                  ></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="floating"> Income </ion-label>
+                  <ion-input formControlName="income" type="number"></ion-input>
+                </ion-item>
+
+                <ion-item style="margin-bottom: 15px">
+                  <ion-label position="floating"> Tax withheld </ion-label>
+                  <ion-input
+                    formControlName="taxWithheld"
+                    type="number"
+                  ></ion-input>
+                </ion-item>
+
+                <ion-button
+                  expand="full"
+                  size="small"
+                  *ngIf="i"
+                  (click)="removeIncome(i)"
+                >
+                  <ion-icon slot="start" name="trash-outline"></ion-icon>
+                  Remove
+                </ion-button>
+              </ng-container>
+            </ion-card>
+          </div>
+
+          <ion-button (click)="addIncome()">
+            <ion-icon slot="start" name="add-outline"></ion-icon>
+            Add Income
+          </ion-button>
+        </ion-list>
+      </ion-slide>
+      <ion-slide>
+        <ion-list>
+          <ion-header>Provide your Bank Details</ion-header>
+          <div formArrayName="interest">
+            <ion-card *ngFor="let control of interest.controls; let i=index">
+              <ng-container [formGroup]="control">
+                <ion-item>
+                  <ion-label position="floating"> Bank Name </ion-label>
+                  <ion-input formControlName="bankName" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label position="floating"> Income </ion-label>
+                  <ion-input formControlName="income" type="number"></ion-input>
+                </ion-item>
+
+                <ion-item style="margin-bottom: 15px">
+                  <ion-label position="floating"> Tax withheld </ion-label>
+                  <ion-input
+                    formControlName="taxWithheld"
+                    type="number"
+                  ></ion-input>
+                </ion-item>
+
+                <ion-button
+                  expand="full"
+                  size="small"
+                  *ngIf="i"
+                  (click)="removeBank(i)"
+                >
+                  <ion-icon slot="start" name="trash-outline"></ion-icon>
+                  Remove
+                </ion-button>
+              </ng-container>
+            </ion-card>
+          </div>
+
+          <ion-button (click)="addBank()">
+            <ion-icon slot="start" name="add-outline"></ion-icon>
+            Add Bank
+          </ion-button>
+        </ion-list>
+      </ion-slide>
+    </ion-slides>
+  </form>
+</ion-content>
