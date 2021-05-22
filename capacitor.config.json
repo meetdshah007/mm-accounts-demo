@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "mm-accounts-demo",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

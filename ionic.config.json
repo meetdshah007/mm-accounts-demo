@@ -1,0 +1,7 @@
+{
+  "name": "mm-accounts-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
