@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-tab3',
@@ -9,9 +10,10 @@ import { NavController } from '@ionic/angular';
 export class Tab3Page {
   date = new Date();
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private auth: AuthService) {}
 
   onLogout() {
+    this.auth.logout();
     this.navCtrl.navigateRoot('');
   }
 }

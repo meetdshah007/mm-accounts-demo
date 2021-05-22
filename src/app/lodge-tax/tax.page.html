@@ -28,7 +28,9 @@
     >
       <ion-slide>
         <ion-list>
-          <ion-header>Provide your Basic Details</ion-header>
+          <ion-item>
+            <h3>Provide your Basic Details</h3>
+          </ion-item>
           <ion-item>
             <ion-label position="floating"> Tax file Number </ion-label>
             <ion-input formControlName="taxFileNo" type="text"></ion-input>
@@ -73,8 +75,10 @@
       </ion-slide>
       <ion-slide>
         <ion-list>
-          <ion-header>Provide your Income Details</ion-header>
-          <div formArrayName="incomeStatement">
+          <ion-item>
+            <h3>Provide your Income Details</h3>
+          </ion-item>
+          <ng-container formArrayName="incomeStatement">
             <ion-card
               *ngFor="let control of incomeStatement.controls; let i=index"
             >
@@ -111,7 +115,7 @@
                 </ion-button>
               </ng-container>
             </ion-card>
-          </div>
+          </ng-container>
 
           <ion-button (click)="addIncome()">
             <ion-icon slot="start" name="add-outline"></ion-icon>
@@ -121,7 +125,9 @@
       </ion-slide>
       <ion-slide>
         <ion-list>
-          <ion-header>Provide your Bank Details</ion-header>
+          <ion-item>
+            <h3>Provide your Bank Details</h3>
+          </ion-item>
           <div formArrayName="interest">
             <ion-card *ngFor="let control of interest.controls; let i=index">
               <ng-container [formGroup]="control">
