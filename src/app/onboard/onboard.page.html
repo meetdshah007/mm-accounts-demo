@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-card class="onboard-card">
+        <ion-img src="/assets/tax1.svg"></ion-img>
+        <ion-card-content>
+          <ion-card-title>Keep Checklist of your taxes</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="onboard-card">
+        <ion-img src="/assets/tax2.svg"></ion-img>
+        <ion-card-content>
+          <ion-card-title>Invest your money</ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="onboard-card">
+        <ion-img src="/assets/tax3.svg"></ion-img>
+        <ion-card-content>
+          <ion-card-title>Save the taxes</ion-card-title>
+        </ion-card-content>
+
+        <ion-button expand="full" color="tertiary" (click)="getStarted()">
+          Get Started
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-button>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
