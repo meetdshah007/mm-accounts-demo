@@ -1,17 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title> Dashboard </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Dashboard</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card mode="md" class="dashboard-card--filed-card">
+    <ion-card-header>
+      <ion-card-title>Returns Filed</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="position-relative">
+        <span class="dashboard-card--numbers">2</span>
+        <div class="dashboard-card--icon">
+          <ion-icon name="document-attach-outline" size="large"></ion-icon>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card mode="md" class="dashboard-card--in-progress-card">
+    <ion-card-header>
+      <ion-card-title>Returns InProgress</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="position-relative">
+        <span class="dashboard-card--numbers">1</span>
+        <div class="dashboard-card--icon">
+          <ion-icon name="documents-outline" size="large"></ion-icon>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- fab placed to the (vertical) center and end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

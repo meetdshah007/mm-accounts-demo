@@ -1,0 +1,30 @@
+.dashboard-card {
+  &--filed-card {
+    border-color: rgba(0, 115, 170, 0.5);
+    border-top: 5px solid;
+  }
+  &--in-progress-card {
+    border-top: 5px solid;
+    border-color: #2ecc71;
+  }
+  &--numbers {
+    font-size: 22px;
+  }
+  &--icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    height: 70px;
+    width: 70px;
+    ion-icon {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}
+.position-relative {
+  position: relative;
+  height: 50px;
+}
